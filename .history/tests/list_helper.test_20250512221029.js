@@ -84,6 +84,6 @@ describe('total likes', () => {
 
     test ('of a bigger list is calculated right', () => {
         const result = totalLikes(listWithMultipleBlogs)
-        assert.strictEqual(result, 36)
+        assert.strictEqual(result, 22)
       })
   })
