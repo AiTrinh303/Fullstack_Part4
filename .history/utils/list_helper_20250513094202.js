@@ -14,7 +14,7 @@ export const favoriteBlog = (blogs) => {
     return blogs.reduce((max, blog) => blog.likes > max.likes ? blog : max, blogs[0])
   }  
 
-export const mostBlogs = (blogs) => {
+  export const mostBlogs = (blogs) => {
     if (blogs.length === 0) return null
   
     const grouped = _.groupBy(blogs, 'author')

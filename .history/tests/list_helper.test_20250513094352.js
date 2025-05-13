@@ -1,6 +1,6 @@
 import { describe, test } from 'node:test'
 import assert from 'node:assert'
-import { dummy, favoriteBlog, mostBlogs, totalLikes } from '../utils/list_helper.js'
+import { dummy, favoriteBlog, totalLikes } from '../utils/list_helper.js'
 
 test('dummy returns one', () => {
   const blogs = []
@@ -92,8 +92,8 @@ describe('total likes', () => {
         assert.deepStrictEqual(result, listWithMultipleBlogs[2])
       })  
 
-    test('returns the author with the most blogs', () => {
-        const result = mostBlogs(listWithMultipleBlogs)
+      test('returns the author with the most blogs', () => {
+        const result = mostBlogs(blogs)
         const expected = {
           author: 'Robert C. Martin',
           blogs: 3

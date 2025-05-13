@@ -93,7 +93,7 @@ describe('total likes', () => {
       })  
 
     test('returns the author with the most blogs', () => {
-        const result = mostBlogs(listWithMultipleBlogs)
+        const result = mostBlogs(blogs)
         const expected = {
           author: 'Robert C. Martin',
           blogs: 3
