@@ -1,6 +1,6 @@
 import { describe, test } from 'node:test'
 import assert from 'node:assert'
-import { dummy, favoriteBlog, mostBlogs, mostLikes, totalLikes } from '../utils/list_helper.js'
+import { dummy, favoriteBlog, mostBlogs, totalLikes } from '../utils/list_helper.js'
 
 test('dummy returns one', () => {
   const blogs = []
@@ -81,7 +81,7 @@ describe('total likes', () => {
       const result = totalLikes(listWithOneBlog)
       assert.strictEqual(result, 5)
     })
-
+mostBlogs(
     test ('of a bigger list is calculated right', () => {
         const result = totalLikes(listWithMultipleBlogs)
         assert.strictEqual(result, 36)
@@ -93,7 +93,7 @@ describe('total likes', () => {
       })  
 
     test('returns the author with the most blogs', () => {
-        const result = mostBlogs(listWithMultipleBlogs)
+        const result = listWithMultipleBlogs)
         const expected = {
           author: 'Robert C. Martin',
           blogs: 3
@@ -103,7 +103,7 @@ describe('total likes', () => {
       })  
 
     test('returns the author with most likes', () => {
-        const result = mostLikes(listWithMultipleBlogs)
+        const result = mostLikes(blogs)
         const expected = {
           author: 'Edsger W. Dijkstra',
           likes: 17

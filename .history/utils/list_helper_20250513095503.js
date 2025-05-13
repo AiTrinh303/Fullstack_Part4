@@ -27,7 +27,7 @@ export const mostBlogs = (blogs) => {
     }
   }
 
-export const mostLikes = (blogs) => {
+  export const mostLikes = (blogs) => {
     if (blogs.length === 0) return null
   
     const grouped = _.groupBy(blogs, 'author')

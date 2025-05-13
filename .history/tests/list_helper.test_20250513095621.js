@@ -1,6 +1,6 @@
 import { describe, test } from 'node:test'
 import assert from 'node:assert'
-import { dummy, favoriteBlog, mostBlogs, mostLikes, totalLikes } from '../utils/list_helper.js'
+import { dummy, favoriteBlog, mostBlogs, totalLikes } from '../utils/list_helper.js'
 
 test('dummy returns one', () => {
   const blogs = []
