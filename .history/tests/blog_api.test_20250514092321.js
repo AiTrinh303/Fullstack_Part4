@@ -50,31 +50,7 @@ test('unique identifier property of the blog posts is named id', async () => {
     }
   })
 
-  test('a valid blog can be added', async () => {
-    const newBlog = {
-      title: 'New blog post',
-      author: 'New Author',
-      url: 'http://newblog.com',
-      likes: 5,
-    }
   
-    const blogsAtStart = await api.get('/api/blogs')
-  
-    await api
-      .post('/api/blogs')
-      .send(newBlog)
-      .expect(201)
-      .expect('Content-Type', /application\/json/)
-  
-    const blogsAtEnd = await api.get('/api/blogs')
-    const titles = blogsAtEnd.body.map(b => b.title)
-  
-    // Length should increase
-    assert.strictEqual(blogsAtEnd.body.length, blogsAtStart.body.length + 1)
-  
-    // The new blog should be in the list
-    assert.ok(titles.includes(newBlog.title))
-  })  
   
 
 after(async () => {

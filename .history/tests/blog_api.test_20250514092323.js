@@ -74,7 +74,8 @@ test('unique identifier property of the blog posts is named id', async () => {
   
     // The new blog should be in the list
     assert.ok(titles.includes(newBlog.title))
-  })  
+  })
+  
   
 
 after(async () => {
