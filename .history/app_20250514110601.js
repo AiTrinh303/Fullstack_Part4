@@ -6,7 +6,7 @@ import blogsRouter from './controllers/blogs.js'
 import usersRouter from './controllers/users.js'
 import loginRouter from './controllers/login.js'
 import { MONGODB_URI } from './utils/config.js'
-import { tokenExtractor, userExtractor } from './utils/middleware.js'
+import { tokenExtractor } from './utils/middleware.js'
 
 dotenv.config()
 

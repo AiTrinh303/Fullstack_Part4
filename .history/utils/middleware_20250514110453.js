@@ -1,5 +1,5 @@
 import User from '../models/user.js'
-import jwt from 'jsonwebtoken'
+
 
 export const tokenExtractor = (req, res, next) => {
     const authorization = req.get('authorization')
@@ -11,7 +11,7 @@ export const tokenExtractor = (req, res, next) => {
     next()
   }
 
-export const userExtractor = async (request, response, next) => {
+  const userExtractor = async (request, response, next) => {
     const token = request.token
     if (token) {
       try {
