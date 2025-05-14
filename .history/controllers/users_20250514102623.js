@@ -6,7 +6,8 @@ const usersRouter = express.Router()
 
 usersRouter.post('/', async (req, res) => {
     const { username, name, password } = req.body
-
+  
+    // Validate username and password existence and length
     if (!username || username.length < 3) {
       return res.status(400).json({ error: 'Username must be at least 3 characters long' })
     }
