@@ -4,9 +4,8 @@ import dotenv from 'dotenv'
 import cors from 'cors'
 import blogsRouter from './controllers/blogs.js'
 import usersRouter from './controllers/users.js'
-import loginRouter from './controllers/login.js'
 import { MONGODB_URI } from './utils/config.js'
-import { tokenExtractor } from './utils/middleware.js'
+
 
 dotenv.config()
 
@@ -22,9 +21,7 @@ mongoose.connect(MONGODB_URI)
 
 app.use(cors())  
 app.use(express.json())
-app.use(tokenExtractor)
 app.use('/api/blogs', blogsRouter)
 app.use('/api/users', usersRouter)
-app.use('/api/login', loginRouter)
 
 export default app
