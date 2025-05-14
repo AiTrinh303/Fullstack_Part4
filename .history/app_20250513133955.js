@@ -1,7 +1,6 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
-import cors from 'cors'
 import blogsRouter from './controllers/blogs.js'
 import { MONGODB_URI } from './utils/config.js'
 
