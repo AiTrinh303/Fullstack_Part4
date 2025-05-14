@@ -21,6 +21,5 @@ mongoose.connect(MONGODB_URI)
 app.use(cors())  
 app.use(express.json())
 app.use('/api/blogs', blogsRouter)
-app.use('/api/users', usersRouter)
 
 export default app
