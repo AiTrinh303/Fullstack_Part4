@@ -91,38 +91,6 @@ test('unique identifier property of the blog posts is named id', async () => {
   
     assert.strictEqual(response.body.likes, 0)
   })
-
-  test('blog without title is not added', async () => {
-    const newBlog = {
-      author: 'No Title Author',
-      url: 'http://notitle.com',
-      likes: 1,
-    }
-  
-    await api
-      .post('/api/blogs')
-      .send(newBlog)
-      .expect(400)
-  
-    const blogsAtEnd = await api.get('/api/blogs')
-    assert.strictEqual(blogsAtEnd.body.length, initialBlogs.length)
-  })
-  
-  test('blog without url is not added', async () => {
-    const newBlog = {
-      title: 'Missing URL Blog',
-      author: 'No URL Author',
-      likes: 1,
-    }
-  
-    await api
-      .post('/api/blogs')
-      .send(newBlog)
-      .expect(400)
-  
-    const blogsAtEnd = await api.get('/api/blogs')
-    assert.strictEqual(blogsAtEnd.body.length, initialBlogs.length)
-  })
   
     
 
