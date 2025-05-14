@@ -4,17 +4,16 @@ import User from '../models/user.js'
 
 const blogsRouter = express.Router()
 
-blogsRouter.get('/', async (req, res) => {
-  const blogs = await Blog.find({}).populate('user', { username: 1, name: 1 })
-  res.json(blogs)
+blogsRouter.get('/', async (request, response) => {
+  const blogs = await Blog.find({})
+  response.json(blogs)
 })
-
 
 blogsRouter.post('/', async (req, res) => {
   const body = req.body
 
   const users = await User.find({})
-  const user = users[0] 
+  const user = users[0]  // Just use the first user (will be replaced in 4.19)
 
   const blog = new Blog({
     title: body.title,
@@ -26,6 +25,7 @@ blogsRouter.post('/', async (req, res) => {
 
   const savedBlog = await blog.save()
 
+  // Link blog to the user
   user.blogs = user.blogs.concat(savedBlog._id)
   await user.save()
 
