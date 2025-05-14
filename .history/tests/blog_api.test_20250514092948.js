@@ -81,6 +81,7 @@ test('unique identifier property of the blog posts is named id', async () => {
       title: 'No likes blog',
       author: 'Anonymous',
       url: 'http://nolikes.com',
+      // likes is intentionally omitted
     }
   
     const response = await api
