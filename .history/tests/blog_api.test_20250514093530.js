@@ -124,7 +124,7 @@ test('unique identifier property of the blog posts is named id', async () => {
     assert.strictEqual(blogsAtEnd.body.length, initialBlogs.length)
   })
   
-test('a blog can be deleted', async () => {
+  test('a blog can be deleted', async () => {
     const blogsAtStart = await Blog.find({})
     const blogToDelete = blogsAtStart[0]
   
